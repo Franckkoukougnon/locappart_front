@@ -9,7 +9,7 @@ import { AppartementService } from 'src/app/services/appartement/appartement.ser
   selector: 'app-appartement-details',
   templateUrl: './appartement-details.component.html',
   styleUrls: ['./appartement-details.component.css'],
- 
+
 })
 
 
@@ -40,7 +40,7 @@ export class AppartementDetailsComponent implements OnInit {
           )
         }
       })
-      
+
     }
 
 
