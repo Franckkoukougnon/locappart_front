@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="form-wrapper">
+      <form [formGroup]="registerForm" class="form-container">
+        <h2>Inscription</h2>
+        <div class="form-group">
+          <mat-form-field appearance="fill">
+            <mat-label>Nom</mat-label>
+            <input matInput type="text" placeholder="Enter your first name" formControlName="username">
+            <mat-error
+              *ngIf="registerForm.get('username')?.hasError('required') && registerForm.get('username')?.touched">
+              Le nom est requis
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" placeholder="Enter email" formControlName="email">
+            <mat-error *ngIf="registerForm.get('email')?.hasError('required') && registerForm.get('email')?.touched">
+              L'email est requis
+            </mat-error>
+            <mat-error *ngIf="registerForm.get('email')?.hasError('email') && registerForm.get('email')?.touched">
+              L'email est invalide
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" placeholder="Password" formControlName="password">
+            <mat-error
+              *ngIf="registerForm.get('password')?.hasError('required') && registerForm.get('password')?.touched">
+              Le mot de passe est requis
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field appearance="fill">
+            <mat-label>Confirm Password</mat-label>
+            <input matInput type="password" placeholder="Confirm Password" formControlName="confirmPassword">
+            <mat-error
+              *ngIf="registerForm.get('confirmPassword')?.hasError('required') && registerForm.get('confirmPassword')?.touched">
+              Veuillez confirmer le mot de passe
+            </mat-error>
+            <mat-error
+              *ngIf="registerForm.hasError('passwordMismatch') && registerForm.get('confirmPassword')?.touched">
+              Les mots de passe ne correspondent pas
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <button type="submit" class="btn btn-primary" (click)="signUp()" [disabled]="registerForm.invalid">Register
+        </button>
+        Or <a routerLink="/login">Login</a>
+      </form>
+    </div>
+</div>

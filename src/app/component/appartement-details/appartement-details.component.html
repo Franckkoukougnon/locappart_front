@@ -1,0 +1,110 @@
+<!--
+
+  <div class="container custom-container">
+    <a class="btn btn-primary" [routerLink]="['/home']">
+      <i class="fas fa-arrow-left"></i>
+      Retour à la liste
+    </a>
+    <div class="row align-items-center">
+      <div class="col-lg-12 mb-12 mb-lg-12">
+        <div class="mx-auto text-center">
+          <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img [src]="selectedAppartement.imageUrl" class="d-block w-100" alt="image">
+              </div>
+              <div class="carousel-item">
+                <img [src]="selectedAppartement.imageUrl2" class="d-block w-100" alt="image">
+              </div>
+              <div class="carousel-item">
+                <img [src]="selectedAppartement.imageUrl3" class="d-block w-100" alt="image">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12 mb-12 mb-lg-12">
+        <div class="ps-lg-6 ps-xl-10 w-lg-90">
+          <div class="mb-4">
+            <div class="d-flex align-items-center mb-3 custom-info">
+              <h3><i class="fa-solid fa-house"></i><span style="margin: 5px">{{ selectedAppartement.name }}</span></h3>
+            </div>
+          </div>
+          <p class="mb-4 custom-description">
+            {{ selectedAppartement.description }}
+          </p>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="d-flex align-items-center mb-3 custom-info">
+                <i class="fas fa-bed me-2"></i>
+                <span style="margin: 5px">{{ selectedAppartement.nbChambres }}</span>
+              </div>
+              <div class="d-flex align-items-center mb-3 custom-info">
+                <i class="fas fa-bath me-2"></i>
+                <span style="margin: 5px">{{ selectedAppartement.nbSallesDeBain }}</span>
+              </div>
+              <div class="d-flex align-items-center mb-3 custom-info">
+                <i class="fa-solid fa-hand-holding-dollar"></i>
+                <span style="margin: 5px">{{ selectedAppartement.loyer }} euros</span>
+              </div>
+              <div class="d-flex align-items-center mb-3 custom-info">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <span style="margin: 5px">{{ selectedAppartement.categorie.name }}</span>
+              </div>
+              <div class="d-flex align-items-center mb-3 custom-info">
+                <i class="fa-solid fa-user"></i>
+                <span
+                  style="margin: 10px">{{ selectedAppartement.bailleur.nom + " " + selectedAppartement.bailleur.prenom }}</span>
+                <i class="fa-solid fa-phone"></i>
+                <span style="margin: 10px">{{ selectedAppartement.bailleur.telephone }}</span>
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span style="margin: 10px">{{ selectedAppartement.bailleur.email }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>-->
+
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{selectedAppartement.name}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="selectedAppartement.imageUrl" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>
+       {{selectedAppartement.description}}
+      </p>
+      <p>
+       Nombre de chambre :  {{ selectedAppartement.nbChambres }}
+      </p>
+      <p>
+        Nombre de salle de bain :  {{ selectedAppartement.nbSallesDeBain }}
+      </p>
+      <p>
+       Loyer :  {{ selectedAppartement.loyer}} euros
+      </p>
+      <p>
+        Type d'appartement :  {{ selectedAppartement.categorie.name}}
+      </p>
+      <p>
+        Identité du bailleur  :  {{ selectedAppartement.bailleur.nom + " " + selectedAppartement.bailleur.prenom }}
+      </p>
+      <p>
+        Contact du bailleur   :  {{ selectedAppartement.bailleur.email + " " + selectedAppartement.bailleur.telephone }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button [routerLink]="['/home']">rerour sur la liste </button>
+    </mat-card-actions>
+  </mat-card>

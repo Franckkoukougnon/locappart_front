@@ -1,0 +1,46 @@
+<div class="container">
+  <h2>Ajouter un nouveau Bailleur</h2>
+  <form [formGroup]="formBailleur" (ngSubmit)="addBailleur()">
+    <!-- <div class="form-group">
+       <label for="nom">Nom:</label>
+       <input type="text" id="nom" formControlName="nom" class="form-control">
+     </div>
+     <div class="form-group">
+       <label for="prenom">Prenom:</label>
+       <input type="text" id="prenom" formControlName="prenom" class="form-control">
+     </div>
+     <div class="form-group">
+       <label for="telephone">Telephone:</label>
+       <input type="tel" id="telephone" pattern="[0-9]*" inputmode="numeric"  formControlName="telephone" class="form-control">
+     </div>
+     <div class="form-group">
+       <label for="email">Email:</label>
+       <input type="text" id="email"  formControlName="email" class="form-control">
+     </div>-->
+    <div class="form-group">
+      <mat-form-field class="form-group" appearance="fill">
+        <mat-label for="nom">Nom</mat-label>
+        <input matInput type="text" id="nom" placeholder="Veuillez ecrire votre nom" formControlName="nom">
+      </mat-form-field>
+
+      <mat-form-field class="form-group" appearance="fill">
+        <mat-label for="prenom">Prenom</mat-label>
+        <input matInput type="text" id="prenom" placeholder="Veuillez ecrire votre prenom" formControlName="prenom">
+      </mat-form-field>
+
+      <mat-form-field class="form-group" appearance="fill">
+        <mat-label for="telephone">Telephone</mat-label>
+        <input matInput type="tel" id="telephone" pattern="[0-9]*" inputmode="numeric" placeholder="01 02 03 04 05 06"
+               formControlName="telephone">
+      </mat-form-field>
+
+      <mat-form-field class="form-group" appearance="fill">
+        <mat-label for="email">Email</mat-label>
+        <input matInput type="email" id="email" formControlName="email">
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" [disabled]="formBailleur.invalid">Ajouter</button>
+    </div>
+    <!-- <button type="submit" class="btn btn-primary" [disabled]="formBailleur.invalid">Ajouter</button>-->
+  </form>
+
+</div>

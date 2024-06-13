@@ -1,0 +1,69 @@
+
+<div class="container">
+    <h2>Ajouter un nouvel appartement</h2>
+    <form [formGroup]="formAppart" (ngSubmit)="addAppartement()">
+      <div class="form-group">
+        <label for="name">Nom:</label>
+        <input type="text" id="name" formControlName="name" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea id="description" formControlName="description" class="form-control"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="bailleur">Bailleur:</label>
+        <select id="bailleur" formControlName="bailleur" class="form-control">
+          <option *ngFor="let bailleur of bailleurs" [value]="bailleur.id">{{ bailleur.nom+' '+  bailleur.prenom}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="ville">Ville:</label>
+        <select id="ville" formControlName="ville" class="form-control">
+          <option *ngFor="let ville of villes" [value]="ville.id">{{ ville.nom}}</option>
+        </select>
+      </div>
+
+
+      <div class="form-group">
+        <label for="categorie">Catégorie:</label>
+        <select id="categorie" formControlName="categorie" class="form-control">
+          <option *ngFor="let categorie of categories" [value]="categorie.id">{{ categorie.name }}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="currentPrice">Prix actuel:</label>
+        <input type="number" id="currentPrice" formControlName="currentPrice" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="nbChambres">Nombre de chambres:</label>
+        <input type="number" id="nbChambres" formControlName="nbChambres" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="nbSallesDeBain">Nombre de salles de bain:</label>
+        <input type="number" id="nbSallesDeBain" formControlName="nbSallesDeBain" class="form-control">
+      </div>
+
+
+      <div class="form-group">
+        <label for="imageUrl">URL de l'image principale:</label>
+        <input type="text" id="imageUrl" formControlName="imageUrl" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="imageUrl2">URL de la deuxième image:</label>
+        <input type="text" id="imageUrl2" formControlName="imageUrl2" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="imageUrl3">URL de la troisième image:</label>
+        <input type="text" id="imageUrl3" formControlName="imageUrl3" class="form-control">
+      </div>
+
+      <button type="submit" class="btn btn-primary" [disabled]="formAppart.invalid">Ajouter</button>
+    </form>
+  </div>

@@ -1,0 +1,27 @@
+
+    
+    .form-container {
+    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    }
+    
+    .error-message {
+    color: red;
+    }
+
+    .container {
+        background-image: url('./../../../assets/image/appart1.jpg');
+        background-size: cover;
+        background-position: center;
+        width: 100vw; /* Utilisation de la largeur de la fenêtre du navigateur */
+        height: 100vh;
+      
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    
+    

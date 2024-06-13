@@ -1,0 +1,33 @@
+/* Exemple de styles CSS pour le modal */
+.modal-container {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #dc3545;
+
+}
+
+.modal-message {
+  font-size: 18px;
+  color: #666;
+  margin-top: 10px;
+}
+
+.close-cross {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+.close-cross:hover {
+  color: #555;
+}

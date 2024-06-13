@@ -1,0 +1,70 @@
+<!-- home.component.html -->
+
+
+<div class="container " id="main-container">
+
+  <!-- Filtre par catégorie -->
+  <div class="filter-section">
+    <h3>Filtrer par catégorie</h3>
+
+    <div *ngFor="let categorie of categories" class="filter-item">
+      <input type="checkbox" [(ngModel)]="selectedCategories[categorie.id]" id="categorie_{{categorie.id}}">
+      <label for="categorie_{{categorie.id}}">{{ categorie.name }}</label>
+    </div>
+    <button class="filter-button" (click)="filterByCategorie()">Appliquer le filtre</button>
+  </div>
+
+  <!-- Filtre par ville -->
+  <div class="filter-section">
+    <h3>Filtrer par ville</h3>
+    <select [(ngModel)]="selectedVilleId" class="filter-select">
+      <option value="" selected>Toutes les villes</option>
+      <option *ngFor="let ville of villes" [value]="ville.id">{{ ville.nom }}</option>
+    </select>
+    <button class="filter-button" (click)="filterByVille()">Appliquer le filtre</button>
+  </div>
+
+  <!-- Réinitialiser les filtres -->
+  <div class="reset-section">
+    <button class="reset-button" (click)="resetFilter()">Réinitialiser les filtres</button>
+  </div>
+
+
+  <div *ngFor="let appartement of appartements">
+    <!-- Afficher les détails de l'appartement ici -->
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="text-center">
+        <h2 class="display-4">Nos appartements</h2>
+        <p class="lead">Découvrez nos appartements</p>
+      </div>
+    </div>
+    <div class="row mt-n5">
+      <div class="col-md-6 col-lg-4 mt-5 wow fadeInUp" data-wow-delay=".2s" *ngFor="let appartement of appartements">
+        <div class="blog-grid">
+          <div class="blog-grid-img position-relative"><img alt="img" [src]="appartement.imageUrl"></div>
+          <div class="blog-grid-text p-4">
+            <h3 class="h5 mb-3"><a >{{ appartement.name }}</a></h3>
+            <p class="display-30">{{ tronquerDescription(appartement.description, 20) }}</p>
+            <p class="card-text"><span class="text-muted">Type d'appartement : </span>{{ appartement.categorie.name }}
+            </p>
+            <p class="card-text"><span
+              class="text-muted font-weight-bold">Loyer :{{ appartement.loyer | number:'0.00' }}
+              euros</span></p>
+            <p class="card-text"><span
+              class="text-muted">Ville : </span>{{ appartement.ville ? appartement.ville.nom : 'N/A' }}
+            </p>
+            <button mat-raised-button color="primary" (click)="afficherDetails(appartement)">
+              <mat-icon>info</mat-icon>
+              Voir en détails
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

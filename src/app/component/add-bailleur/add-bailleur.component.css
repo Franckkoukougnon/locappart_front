@@ -1,0 +1,70 @@
+/*.container {
+  max-width: 600px; !* ou tout autre maximum souhaité *!
+  margin: 0 auto; !* centre le formulaire horizontalement sur la page *!
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+!* Ajoute une marge au bas du bouton *!
+button {
+  margin-bottom: 20px;
+}
+
+!* Applique une largeur de 100% aux champs de saisie pour les rendre pleine largeur sur les petits écrans *!
+input,
+textarea,
+select {
+  width: 100%;
+}
+
+!* Applique un style pour améliorer l'affichage de la liste déroulante sur les petits écrans *!
+select {
+  appearance: none;
+  padding: 10px;
+}
+
+!* Ajoute une légère bordure autour des champs de saisie *!
+input,
+textarea,
+select {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+!* Augmente la taille de la police pour une meilleure lisibilité sur les petits écrans *!
+label {
+  font-size: 16px;
+}
+
+!* Centre le texte dans le bouton *!
+button {
+  text-align: center;
+}
+
+!* Media query pour appliquer des styles spécifiques aux petits écrans *!
+@media screen and (max-width: 480px) {
+  .container {
+    max-width: 100%;
+    padding: 10px;
+  }
+}*/
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+button {
+  margin-top: 16px;
+}

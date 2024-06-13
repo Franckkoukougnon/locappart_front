@@ -1,0 +1,32 @@
+.register-form-container {
+  width: 260px;
+  height: 430px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #f2f2f2; /* Couleur de fond gris clair */
+  padding: 20px; /* Ajoute un peu d'espace intérieur pour le contenu */
+  border-radius: 10px;
+
+}
+
+.register-form {
+  width: 100%;
+  height: 100%;
+
+}
+
+.container {
+  background-image: url('./../../../assets/image/appart2.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 100vw; /* Utilisation de la largeur de la fenêtre du navigateur */
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

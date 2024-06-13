@@ -1,0 +1,54 @@
+/* dashboard.component.css */
+.container {
+    max-width: 800px;
+    margin: auto;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+  }
+
+  /* Style du formulaire de modification */
+  .edit-form {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .edit-form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .edit-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+
+  .edit-form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .edit-form button:hover {
+    background-color: #45a049;
+  }
+
+  .btn-class{
+    margin: 3px ;
+  }
+
+  .btn-edit {
+   margin: 5px 0 5px 5px;
+  }
+
+.btn {
+  margin: 5px; /* Ajoute une marge de 5px à droite de chaque bouton */
+}

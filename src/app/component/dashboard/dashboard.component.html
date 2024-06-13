@@ -1,0 +1,111 @@
+<div class="container">
+  <button type="button" class="btn btn-outline-primary" (click)="addAappartement()">
+    <a><i class="fa-solid fa-plus"></i> Ajouter un appartement</a>
+  </button>
+  <button type="button" class="btn btn-outline-success" (click)="addBailleur()">
+    <a><i class="fa-solid fa-plus"></i> Ajouter un Bailleur</a>
+  </button>
+  <button type="button" class="btn btn btn-outline-secondary" (click)="addVille()">
+    <a><i class="fa-solid fa-plus"></i> Ajouter une ville</a>
+  </button>
+  <table class="table table-bordered">
+
+    <thead>
+    <tr>
+      <th scope="col">Nom</th>
+      <th scope="col">Description</th>
+      <th scope="col">Type</th>
+      <th scope="col">Loyer</th>
+      <th scope="col">Ville</th>
+      <th scope="col">Nb chambre</th>
+
+      <th scope="col">Nb SDB</th>
+      <th scope="col">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let appartement of appartements">
+      <td>{{ appartement.name }}</td>
+      <td>{{ appartement.description }}</td>
+      <td>{{ appartement.categorie.name }}</td>
+      <td>{{ appartement.loyer }}</td>
+      <td>{{ appartement.ville ? appartement.ville.nom : 'N/A' }}</td>
+      <td>{{ appartement.nbChambres }}</td>
+      <td>{{ appartement.nbSallesDeBain }}</td>
+      <td>
+        <button class="btn btn-info btn-class" (click)="editElement(appartement)"><i
+          class="fa-solid fa-pencil"></i></button>
+        <button class="btn btn-danger btn-class" (click)=" supprimerAppartement(appartement)"><i
+          class="fa-solid fa-trash"></i></button>
+
+
+        <button class="btn btn-warning btn-class" (click)="viewElement(appartement)"><i
+          class="fa-solid fa-eye "></i></button>
+
+      </td>
+    </tr>
+    <tbody>
+  </table>
+
+  <div class="container">
+
+
+    <div class="table-responsive">
+
+
+      <div *ngIf="selectedAppartement" class="edit-form">
+        <h3>Modifier l'appartement</h3>
+        <form>
+
+          <div>
+            <label for="name">Nom:</label>
+            <input type="text" id="name" name="name" [(ngModel)]="selectedAppartement.name">
+          </div>
+          <div>
+            <label for="description">Description:</label>
+            <input type="text" id="description" name="description"
+                   [(ngModel)]="selectedAppartement.description">
+          </div>
+          <div class="form-group">
+            <label for="selectedCategory">Catégorie:</label>
+            <select id="selectedCategory" name="selectedCategory"
+                    [(ngModel)]="selectedAppartement.categorie.id" class="form-control">
+              <option *ngFor="let category of categorie" [value]="category.id">{{ category.name }}
+              </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="selectedVille">Ville:</label>
+            <select id="selectedVille" name="selectedVille"
+                    [(ngModel)]="selectedAppartement.ville.id" class="form-control">
+              <option *ngFor="let villes of ville" [value]="villes.id">{{ villes.nom }}
+              </option>
+            </select>
+          </div>
+          <div>
+            <label for="currentPrice">Loyer:</label>
+            <input type="text" id="currentPrice" name="currentPrice"
+                   [(ngModel)]="selectedAppartement.loyer">
+          </div>
+          <div>
+            <label for="nbChambres">Nb Chambres:</label>
+            <input type="text" id="nbChambres" name="nbChambres"
+                   [(ngModel)]="selectedAppartement.nbChambres">
+          </div>
+          <div>
+            <label for="nbSallesDeBain">Nb SDB:</label>
+            <input type="text" id="nbSallesDeBain" name="nbSallesDeBain"
+                   [(ngModel)]="selectedAppartement.nbSallesDeBain">
+          </div>
+
+          <!-- Ajoutez d'autres champs en conséquence -->
+
+          <button type="button" (click)="saveEdit()" class="btn-edit">Enregistrer</button>
+          <button type="button" (click)="cancelEdit()" class="btn-edit">Annuler</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+</div>
