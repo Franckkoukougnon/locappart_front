@@ -35,6 +35,7 @@ import { VilleModalComponent } from './component/modal/ville-modal/ville-modal.c
 import { DeleteConfirmationModalComponentComponent } from './component/modal/delete-confirmation-modal-component/delete-confirmation-modal-component.component';
 import { FavorisComponent } from './component/favoris/favoris.component';
 import {CarouselModule} from "ngx-owl-carousel-o";
+import { AddCategorieComponent } from './component/add-categorie/add-categorie.component';
 
 
 
@@ -62,6 +63,7 @@ import {CarouselModule} from "ngx-owl-carousel-o";
     VilleModalComponent,
     DeleteConfirmationModalComponentComponent,
     FavorisComponent,
+    AddCategorieComponent,
 
 
 

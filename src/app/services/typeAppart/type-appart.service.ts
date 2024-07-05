@@ -7,31 +7,31 @@ import { Categorie } from 'src/app/model/categorie.model';
 @Injectable({
   providedIn: 'root',
 })
-export class CategorieService {
+export class TypeAppartService {
   private baseUrl = environment.baseUrl + '/categories';
 
   constructor(private http: HttpClient) {}
 
-  getCategorie(): Observable<Categorie[]> {
+  getTypeAppart(): Observable<Categorie[]> {
     return this.http.get<Categorie[]>(`${this.baseUrl}`);
   }
 
-  getCategorieById(id: number): Observable<Categorie> {
+  getTypeAppartById(id: number): Observable<Categorie> {
     return this.http.get<Categorie>(`${this.baseUrl}/${id}`);
   }
 
-  createCategorie(categorie: Categorie): Observable<Categorie> {
-    return this.http.post<Categorie>(`${this.baseUrl}`, categorie);
+  createTypeAppart(typeAppart: Categorie): Observable<Categorie> {
+    return this.http.post<Categorie>(`${this.baseUrl}`, typeAppart);
   }
 
-  updateCategorie(categorie: Categorie): Observable<Categorie> {
+  updateTypeAppart(typeAppart: Categorie): Observable<Categorie> {
     return this.http.put<Categorie>(
-      `${this.baseUrl}/${categorie.id}`,
-      categorie
+      `${this.baseUrl}/${typeAppart.id}`,
+      typeAppart
     );
   }
 
-  deleteCategorie(id: number): Observable<Categorie> {
-    return this.http.delete<Categorie>(`${this.baseUrl}/${id}`);
+  deleteTypeAppart(id: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/${id}`);
   }
 }
